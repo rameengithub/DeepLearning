@@ -1,34 +1,72 @@
-//Image Classification with CNN
+//Import all Libraries
 
-import os
-import torch
-import torchvision
-import tarfile
-from torchvision.datasets.utils import download_url
-from torch.utils.data import random_split
+import tensorflow as tf
+import numpy as np
+import keras
+from keras.layers import Input, Dense, Flatten,Conv2D ,MaxPooling2D ,Dropout
+from keras.models import Model, Sequential
+from keras import datasets, layers, models
+from sklearn import metrics
+from sklearn.metrics import classification_report,precision_score,recall_score,f1_score
+import matplotlib.pyplot as plt
 
-project_name='05-cifar10-cnn'
+//Load Dataset
+(train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 
-// Dowload the dataset
+// Normalize pixel values to be between 0 and 1
+train_images, test_images = train_images / 255.0, test_images / 255.0
 
-dataset_url = "https://s3.amazonaws.com/fast-ai-imageclas/cifar10.tgz"
-download_url(dataset_url, '.')
+//Layers for CNN Building
+model=Sequential()
+model.add(Conv2D(filters=16,kernel_size=2,padding="same", activation="relu",input_shape=(32,32,3)))
+model.add(MaxPooling2D(pool_size=2))
+model.add(Conv2D(filters=32,kernel_size=2, strides=(2, 2), padding="same", activation ="relu"))
+model.add(MaxPooling2D(pool_size=2))
+model.add(Conv2D(filters=64,kernel_size=2, padding="same",  dilation_rate=2,activation="relu"))
+model.add(MaxPooling2D(pool_size=2))
+model.add(Dropout(0.5))
+model.add(Flatten())
+model.add(Dense(64,activation="relu"))
+model.add(Dense(10,activation="softmax"))
 
-// Extract from archive
+//Loss Functios and optimizers
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+history = model.fit(train_images, train_labels, epochs=10, 
+                    validation_data=(test_images, test_labels))
+                    
+//Summary of CNN Model
+model.summary()
 
-with tarfile.open('./cifar10.tgz', 'r:gz') as tar:
-    tar.extractall(path='./data')
-    
-data_dir = './data/cifar10'
 
-print(os.listdir(data_dir))
-classes = os.listdir(data_dir + "/train")
-print(classes)
+//Run Epouchs and calcuate Accuracy
+plt.plot(history.history['accuracy'], label='accuracy')
+plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.ylim([0.0, 1])
+plt.legend(loc='lower right')
+test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 
-airplane_files = os.listdir(data_dir + "/train/airplane")
-print('No. of training examples for airplanes:', len(airplane_files))
-print(airplane_files[:5])
+//Test and Loss Accuracy
+print(test_acc)
+print(test_loss)
 
-ship_test_files = os.listdir(data_dir + "/test/ship")
-print("No. of test examples for ship:", len(ship_test_files))
-print(ship_test_files[:5])
+//Confusion Matrix
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+predictions  = model.predict(test_images)
+predictions_for_cm = predictions.argmax(1)
+class_names = ["airplane","automobile","bird","cat","deer","dog","frog","horse","ship","truck"]
+cm = confusion_matrix(test_labels,predictions_for_cm)
+recall = np.diag(cm) / np.sum(cm, axis = 1)
+precision = np.diag(cm) / np.sum(cm, axis = 0)
+print('Precision: ',precision)
+print('Recall: ',recall)
+plt.figure(figsize=(10,7))
+sns.heatmap(cm, annot=True,  xticklabels=class_names, yticklabels = class_names,fmt='d')
+
+//Calculate Precision, Recall and F1-score
+from sklearn import metrics
+print(metrics.classification_report(test_labels,predictions_for_cm))
