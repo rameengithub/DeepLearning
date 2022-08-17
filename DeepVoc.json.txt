@@ -1,0 +1,209 @@
+{
+  "@context":{
+    "schema":"https://schema.org",
+    "mexcore":"http://mex.aksw.org/mex-core",
+    "mexalgo":"http://mex.aksw.org/mex-algo",
+    "mexperf":"http://mex.aksw.org/mex-perf",
+    "prov":"http://www.w3.org/ns/prov-o#",
+    "deepvoc":"http://deepvoc.org"
+  },
+  "@type":"mexperf:ExecutionPerformance",
+  "prov:generated":[
+    {
+      "@type":"deepvoc:Accuracy",
+      "prov:value":"0.62"
+    },
+    {
+      "@type":"deepvoc:Precision",
+      "prov:value":"0.62"
+    },
+    {
+       "@type":"deepvoc:Recall",
+      "prov:value":"0.62"
+    },
+    {
+      "@type":"deepvoc:F1-Score",
+      "prov:value":"0.62"
+    },
+    {
+      "@type":"deepvoc:ConfusionMatrix",
+      "value":[ 
+        ["airplane","automobile","bird","cat","deer","dog","frog","horse","ship","truck" ],
+        ["540","21","67","12","20","4","4","11","46","21"],
+        ["26","700","10","12","5","5","5","7","54","124"],
+        ["43","9","304","34","32","28","27","9","7","6"],
+        ["36","8","51","294","46","97","65","33","22","16"],
+        ["13","1","174","59","554","61","85","66","2","1"],
+        ["29","14","192","386","93","687","49","137","20","15"],
+        ["8","10","97","98","109","29","711","8","6","7"],
+        ["24","11","55","59","115","65","18","691","12","38"],
+        ["205","33","31","20","21","13","14","3","785","48"],
+        ["76","193","19","26","5","11","22","35","46","724"]
+      ]
+      
+    }
+  ],
+  
+  
+  "prov:wasInformedBy":{
+    "@type":"mexcore:Exceution",
+    
+    "prov:id":"1234",
+    
+    "prov:startedAtTime":"10:22",
+    "prov:endedAtTime":"10:26",
+    
+  "prov:used":[
+    {
+   "@type":"mexcore:Phase",
+    "prov:used":[
+     [
+      {
+        "@type":"mexcore:Train",
+        "@value":"50000"
+      },
+       {
+        "@type":"mexcore:Test",
+        "@value":" "
+      },
+       {
+        "@type":"mexcore:Validation",
+        "@value":"10000"
+      }
+     ]
+     ]
+    },
+    {
+      "@type":"mexcore:Model",
+      "prov:value":"CNN "
+    }
+  
+  ],
+    
+      "@type":"mexcore:HardwareConfiguration",
+    "prov:used":[
+     [
+      {
+        "@type":"mexcore:RAM",
+        "@value":"3.20/12.68 GB"
+      },
+       {
+        "@type":"mexcore:Disk",
+        "@value":"38.72/107.72 GB"
+      }
+     ],
+      
+      
+      {
+      "@type":"mexcore:Dataset",
+        "prov:value":"Cifar10"
+      }
+  ],
+    "prov:wasStartedBy":{
+      "@type":"mexcore:Experiment"
+    },
+    "prov:wasAttributedTo":{
+      "@type":"mexcore:ApplicationContext"
+    },
+    
+    "prov:used":{
+      "@type":"mexalgo:Algorithm"
+     
+  },
+    "prov:hasParameter":[
+      {
+          "@type":"deepvoc:ModelVariant",
+          "prov:value":""
+        },  
+      {
+          "@type":"deepvoc:NumberOfLayers",
+          "prov:value":"10"
+        },
+        {
+          "@type":"deepvoc:KernelSize",
+          "prov:value":"2"
+        },
+        {
+          "@type":"deepvoc:Padding",
+          "prov:value":"same"
+        },
+        {
+          "@type":"deepvoc:Dilation",
+          "prov:value":"2"
+        },
+        {
+          "@type":"deepvoc:ActivationFunction",
+          "prov:value":"relu"
+        },
+         {
+          "@type":"deepvoc:Stride",
+          "prov:value":"2"
+        },
+         {
+          "@type":"deepvoc:NoOfOutput",
+          "prov:value":"10"
+        },
+         {
+          "@type":"deepvoc:LossFunction",
+          "prov:value":"SparseCategoricalCrossentropy"
+        },
+         {
+          "@type":"deepvoc:Optimizer",
+          "prov:value":"adam"
+        },
+         {
+          "@type":"deepvoc:Dropout",
+          "prov:value":"0.5"
+        },
+         {
+          "@type":"deepvoc:BatchSize",
+          "prov:value":"4"
+        },
+         {
+          "@type":"deepvoc:EpochsNumber",
+          "prov:value":"10"
+        }
+                        ],
+    "prov:hasLearningMethod":{
+      "@type":"mexalgo:Supervised"
+      
+    },
+    "prov:hasLearningProblem":{
+      "@type":"mexalgo:Classification"
+    },
+    "prov:hasClass":{
+      "@type":"deepvoc:CNN"
+    },
+     "prov:hasTool":[{
+       
+      "@type":"mexalgo:Python"
+       
+    },
+                     {
+       
+                       "@type":"deepvoc:Tensorflow "
+       
+    },
+                               {
+       
+                       "@type":"deepvoc:Numpy "
+       
+    },
+                               {
+       
+                       "@type":"deepvoc:Keras "
+       
+    },
+                               {
+       
+                       "@type":"deepvoc:Sklearn "
+       
+    },
+                               {
+       
+                       "@type":"deepvoc:Matplotlib "
+       
+    }
+    ]
+    }
+}
