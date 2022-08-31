@@ -1,0 +1,910 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.deepvoc.org#"
+     xml:base="http://www.deepvoc.org"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="http://www.schema.org"
+     xmlns:deepvoc="http://www.deepvoc.org#"
+     xmlns:mex-algo="http://mex.aksw.org/mex-algo#"
+     xmlns:mex-core="http://mex.aksw.org/mex-core#"
+     xmlns:mex-perf="http://mex.aksw.org/mex-perf#">
+    <owl:Ontology rdf:about="http://www.deepvoc.org"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deepvoc.org#generated -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#generated">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#ExecutionPerformance"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#PerformanceMeasures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#hasLearningMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#hasLearningMethod">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Algorithm"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#LearningMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#hasLearningProblem -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#hasLearningProblem">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Algorithm"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#LearningProblem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#hasParameter">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Algorithm"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#Parameters"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#hasTools -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#hasTools">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Algorithm"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#Tools"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#used -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#used">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#ExperimentConfiguration"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#Dataset"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#HardwareConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#wasAttributedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#wasAttributedTo">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Experiment"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#ApplicationContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#wasGeneratedBy">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Execution"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#wasInformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#wasInformedBy">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Execution"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#ExperimentConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#wasStartedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.deepvoc.org#wasStartedBy">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#ExperimentConfiguration"/>
+        <rdfs:range rdf:resource="http://www.deepvoc.org#Experiment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deepvoc.org#accuracyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#accuracyValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Accuracy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#activationFunctionValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#activationFunctionValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#ActivationFunction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#batchSizeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#batchSizeValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#BatchSize"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#cmValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#cmValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#ConfusionMatrix"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#confusionMatrixValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#confusionMatrixValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#ConfusionMatrix"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#datasetValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#datasetValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#dilationValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#dilationValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Dilation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#diskValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#diskValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Disk"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#dropOutValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#dropOutValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Dropout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#epochNumberValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#epochNumberValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#EpochsNumber"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#f1ScoreValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#f1ScoreValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#F1Score"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#kernalSizeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#kernalSizeValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#KernalSize"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#lossFunctionValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#lossFunctionValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#LossFunction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#numberOfLayersValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#numberOfLayersValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#NumberOfLayers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#numberOfOutputValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#numberOfOutputValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#NumberOfOutput"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#optimizerValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#optimizerValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Optimizer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#paddingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#paddingValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Padding"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#precisionValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#precisionValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Precision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#ramValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#ramValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#RAM"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#recallValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#recallValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Recall"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#strideValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#strideValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Stride"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#testValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#testValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Test"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#trainingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#trainingValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Training"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deepvoc.org#validationValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.deepvoc.org#validationValue">
+        <rdfs:domain rdf:resource="http://www.deepvoc.org#Validation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deepvoc.org#Accuracy -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Accuracy">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#PerformanceMeasures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The percent of predictions that were correct.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#ActivationFunction -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#ActivationFunction">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activation function is the last component of the convolutional layer to increase the non-linearity in the output. e.g.: (ReLu or Tanh).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Algorithm -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Algorithm">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The deep learning algorithm, its characteristics and its implementation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#ApplicationContext -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#ApplicationContext">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Basic project information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#BatchSize -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#BatchSize">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The number of samples to work through before updating the internal model parameters.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#CNN -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#CNN">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Model"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convolutional neural network (CNN) is a type of artificial neural network used in image recognition and processing that is specifically designed to process pixel data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Classification -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Classification">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#LearningProblem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Classification is about categorizing objects into groups. A type of classification is where multiple classes are predicted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#ConfusionMatrix -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#ConfusionMatrix">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#PerformanceMeasures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific table layout that allows visualization of the performance of an algorithm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Dataset -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Dataset">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The dataset used on the experiment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Dilation -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Dilation">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It defines a spacing between the values in a kernel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Disk -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Disk">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#HardwareConfiguration"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The disk space consumed by algorithm during execution.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Dropout -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Dropout">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A technique where randomly selected neurons are ignored during training.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#EpochsNumber -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#EpochsNumber">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">One entire transit of the training data through the algorithm.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Execution -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Execution">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The smallest representation of a run of an algorithm. Each execution carry the associated values for each existing variable.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#ExecutionPerformance -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#ExecutionPerformance">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It represents the class to control the performance of each execution as well as interlink the layers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Experiment -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Experiment">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The main class to deﬁne one experiment and its basic information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#ExperimentConfiguration -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#ExperimentConfiguration">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each set of executions should be grouped by one conﬁguration i.e., for one experiment we could have many executions, in different hardware environments or over different algorithm conﬁgurations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#F1Score -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#F1Score">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#PerformanceMeasures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It combines the precision and recall of a classifier into a single metric by taking their harmonic mean.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#HardwareConfiguration -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#HardwareConfiguration">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Basic hardware conﬁguration information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Keras -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Keras">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Tools"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keras is an open-source software library that provides a Python interface for artificial neural networks.It acts as an interface for the TensorFlow library.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#KernalSize -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#KernalSize">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The kernel is nothing but a filter that is used to extract the features from the images.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#LearningMethod -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#LearningMethod">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The algorithm learning method (e.g.:Supervised or Unsupervised).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#LearningProblem -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#LearningProblem">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The algorithm learning problem (e.g.:Classification or Association).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#LossFunction -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#LossFunction">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a prediction error of Neural Net.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Matplotlib -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Matplotlib">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Tools"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Model -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Model">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The generated Classiﬁer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#ModelVariant -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#ModelVariant">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#NumberOfLayers -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#NumberOfLayers">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It defines Number of layers in NN (i.e.A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#NumberOfOutput -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#NumberOfOutput">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Define the size of the output layer</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Numpy -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Numpy">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Tools"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Optimizer -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Optimizer">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It use to find the value of the parameters that minimize error</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Padding -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Padding">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The amount of pixels added to an image when it is being processed by the kernel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Parameters -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Parameters">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The representation of each parameter and its associated values.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#PerformanceMeasures -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#PerformanceMeasures">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The root class for representing the measures. It is applicable whenever an overall execution is being described.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Phase -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Phase">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The phase of given execution: train, validation, test</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Precision -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Precision">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#PerformanceMeasures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ratio between the number of Positive samples correctly classified to the total number of samples classified as Positive (either correctly or incorrectly).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Python -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Python">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Tools"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Python library is a collection of related modules. It contains bundles of code that can be used repeatedly in different programs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#RAM -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#RAM">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#HardwareConfiguration"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The amount of RAM consumed by algorithm during execution.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Recall -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Recall">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#PerformanceMeasures"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The recall is calculated as the ratio between the number of Positive samples correctly classified as Positive to the total number of Positive samples.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Sklearn -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Sklearn">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Tools"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scikit-learn (Sklearn) is the most useful and robust library for machine learning in Python. It provides a selection of efficient tools for machine learning and statistical modeling including classification, regression etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Stride -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Stride">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Parameters"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It modifies the amount of movement over data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Supervised -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Supervised">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#LearningMethod"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is defined by its use of labeled datasets to train algorithms that to classify data or predict outcomes accurately.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Tensorflow -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Tensorflow">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Tools"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TensorFlow is a free and open-source software library for machine learning and artificial intelligence. It can be used across a range of tasks but has a particular focus on training and inference of deep neural networks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Test -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Test">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Phase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Tools -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Tools">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Libraries and language used during execution.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Training -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Training">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Phase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deepvoc.org#Validation -->
+
+    <owl:Class rdf:about="http://www.deepvoc.org#Validation">
+        <rdfs:subClassOf rdf:resource="http://www.deepvoc.org#Phase"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deepvoc.org#Adam -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#Adam">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Optimizer"/>
+        <optimizerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></optimizerValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#CIFAR10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#CIFAR10">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Dataset"/>
+        <datasetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></datasetValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#Relu -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#Relu">
+        <rdf:type rdf:resource="http://www.deepvoc.org#ActivationFunction"/>
+        <dropOutValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"></dropOutValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#SpraseCategoricalCrossEntropy -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#SpraseCategoricalCrossEntropy">
+        <rdf:type rdf:resource="http://www.deepvoc.org#LossFunction"/>
+        <lossFunctionValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></lossFunctionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#same -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#same">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Padding"/>
+        <paddingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></paddingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#0.5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#0.5">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Dropout"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#0.61 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#0.61">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Accuracy"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#F1Score"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#Recall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#0.62 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#0.62">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Precision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#0.86 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#0.86">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Accuracy"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#F1Score"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#Precision"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#Recall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#10">
+        <rdf:type rdf:resource="http://www.deepvoc.org#EpochsNumber"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#NumberOfLayers"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#NumberOfOutput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#10000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#10000">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Validation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#2">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Dilation"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#KernalSize"/>
+        <rdf:type rdf:resource="http://www.deepvoc.org#Stride"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#4">
+        <rdf:type rdf:resource="http://www.deepvoc.org#BatchSize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deepvoc.org#50000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.deepvoc.org#50000">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Training"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- mex.aksw.org/mex-core#OWLNamedIndividual_42e349b8_692c_4609_aee6_12eea0267778 -->
+
+    <owl:NamedIndividual rdf:about="mex.aksw.org/mex-core#OWLNamedIndividual_42e349b8_692c_4609_aee6_12eea0267778">
+        <rdf:type rdf:resource="http://www.deepvoc.org#Dataset"/>
+        <rdfs:label xml:lang="en">FASHION_MNIST</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
